@@ -72,8 +72,10 @@ code {
 
 .app-body {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: row; /* Ensure posts are aligned horizontally */
+  flex-wrap: wrap; /* Ensure posts wrap to the next line */
+  justify-content: center;
+  gap: 1rem;
 
   border: solid 1px #515151;
   margin: 1rem 15%;
@@ -82,8 +84,11 @@ code {
 }
 
 .post {
-  height: 25rem;
-  width: 20rem;
+  display: flex; /* Ensure post is a flex container */
+  flex-direction: column; /* Align content inside post vertically */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+  height: 24rem;
+  width: 21.5rem;
 
   border: solid 1px #515151;
 

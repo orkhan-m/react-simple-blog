@@ -20,6 +20,8 @@ export default function App() {
     setPosts([...posts, newPost]);
 
     setShowPopup(false);
+    setName("");
+    setContent("");
   }
 
   return (
@@ -42,20 +44,18 @@ export default function App() {
 function Body({ posts }) {
   return (
     <div className="app-body">
-      <Post posts={posts} />
+      {posts.map((post, index) => (
+        <Post post={post} key={index} />
+      ))}
     </div>
   );
 }
 
-function Post({ posts }) {
+function Post({ post }) {
   return (
     <div className="post">
-      {posts.map((post, index) => (
-        <div key={index}>
-          <h2>{post.name}</h2>
-          <p>{post.content}</p>
-        </div>
-      ))}
+      <h2>{post.name}</h2>
+      <p>{post.content}</p>
     </div>
   );
 }
